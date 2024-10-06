@@ -23,6 +23,25 @@ library(ggplot2)
 
 ggplot()+geom_point(data =new_data, mapping = aes(x=new_data$x, y=new_data$y, colour=as.character(model$cluster)))
 
+#q2
+data = read.csv('exam1.csv')
+new_data = data[,-1]
+model = kmeans(new_data, 8)
+model$size
+
+# Add the cluster assignments to the original data
+data$Cluster = model$cluster
+
+result = data[, c('rollno', 'Cluster')]
+
+library(dplyr)  # Make sure dplyr is loaded
+
+# Assuming you already have 'result' with columns 'RollNo' and 'Cluster'
+# Filter for cluster number 6
+max_cluster = result %>% 
+  filter(Cluster == 6)
+
+
 #q3
 data1 = iris
 data1 = data1[,-5]
