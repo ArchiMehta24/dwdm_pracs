@@ -38,9 +38,7 @@ library(dplyr)  # Make sure dplyr is loaded
 
 # Assuming you already have 'result' with columns 'RollNo' and 'Cluster'
 # Filter for cluster number 6
-max_cluster = result %>% 
-  filter(Cluster == 6)
-
+max_cluster = result %>% filter(Cluster == 6)
 
 #q3
 data1 = iris
