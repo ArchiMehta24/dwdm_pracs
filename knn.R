@@ -60,7 +60,7 @@ model = knn(train_data, test_data, train_data_label, k=11)
 #increases efficiency
 confusionMatrix(model, test_data_label)
 
-#try running this before creating training and testing data. it automates the process
+#try running this before removing the 5th column. it automates the process
 model1 = train(Species ~., data = train_data, method = 'knn')
 test = predict(model1, test_data)
 confusionMatrix(test, test_data_label)
